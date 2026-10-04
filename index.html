@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/styles-MquUU_rN.css" data-precedence="default"/><link rel="stylesheet" href="external/fonts.googleapis.com/css2-048a8066a0.css" data-precedence="default"/><title>Amrit &amp; Ankita — Wedding Invitation</title><meta name="description" content="You are invited to the wedding celebration of Amrit &amp; Ankita on 9 December 2026 at Sahyadri Mangal Karyalay."/><meta property="og:title" content="Amrit &amp; Ankita — Wedding Invitation"/><meta property="og:description" content="A digital invitation to the wedding of Amrit &amp; Ankita on 9 December 2026 at Sahyadri Mangal Karyalay."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><link rel="modulepreload" href="assets/index-NkhRmeND.js"/><link rel="modulepreload" href="assets/routes-B4KIa_IW.js"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<style>
+  #music-control {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: inherit;
+  }
+  #music-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 9999px;
+    background: rgba(22, 14, 8, 0.78);
+    border: 1px solid rgba(225, 190, 120, 0.45);
+    color: #e1be78;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+    outline: none;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  #music-btn:hover {
+    background: rgba(35, 22, 12, 0.9);
+    border-color: rgba(225, 190, 120, 0.8);
+    box-shadow: 0 0 20px rgba(225, 190, 120, 0.4);
+    transform: translateY(-1px);
+  }
+  .music-disc-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+  #music-btn.playing .music-disc-icon {
+    animation: music-spin 4s linear infinite;
+  }
+  @keyframes music-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @media (max-width: 640px) {
+    #music-control {
+      top: 1rem;
+      right: 1rem;
+    }
+    #music-btn {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.62rem;
+    }
+  }
+</style>
+</head><body><!--$!--><template></template><!--/$--><script class="$tsr" id="$tsr-stream-barrier">(self.$R=self.$R||{})["tsr"]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&&this.streamEnded&&(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=>$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=["assets/index-NkhRmeND.js"],scripts:$R[5]=[$R[6]={attrs:$R[7]={type:"module",async:!0,src:"assets/index-NkhRmeND.js"}}]},"index.html":$R[8]={preloads:$R[9]=["assets/routes-B4KIa_IW.js"]}}},matches:$R[10]=[$R[11]={i:"__root__ ",u:1790274695863,s:"success",ssr:!0},$R[12]={i:"  ",u:1790274695863,s:"success",ssr:!0}],lastMatchId:"  "})($R["tsr"]);$_TSR.e();document.currentScript.remove()</script><script src="./editable/wedding-data.js"></script>
+
+<!-- Ambient Wedding Music: Tum Prem Ho -->
+<div id="music-control">
+  <audio id="wedding-audio" src="./editable/assets/tum_prem_ho.mp3" loop preload="auto"></audio>
+  <button id="music-btn" type="button" aria-label="Toggle background music" title="Tum Prem Ho">
+    <svg class="music-disc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M12 2a10 10 0 0 1 10 10" stroke="#e1be78" stroke-width="2.5"></path>
+    </svg>
+    <span id="music-label">Tum Prem Ho</span>
+  </button>
+</div>
+
+<script>
+  (function() {
+    var audio = document.getElementById('wedding-audio');
+    var btn = document.getElementById('music-btn');
+    var label = document.getElementById('music-label');
+    var isStarted = false;
+
+    function playAudio() {
+      if (!audio) return;
+      audio.play().then(function() {
+        btn.classList.add('playing');
+        label.textContent = 'Tum Prem Ho ♫';
+      }).catch(function() {
+        // Autoplay policy prevented playback until user interaction
+      });
+    }
+
+    function toggleAudio() {
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play().then(function() {
+          btn.classList.add('playing');
+          label.textContent = 'Tum Prem Ho ♫';
+        });
+      } else {
+        audio.pause();
+        btn.classList.remove('playing');
+        label.textContent = 'Music Paused';
+      }
+    }
+
+    if (btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleAudio();
+      });
+    }
+
+    // Auto-trigger on first interaction
+    function onFirstInteract() {
+      if (!isStarted) {
+        isStarted = true;
+        playAudio();
+      }
+      window.removeEventListener('pointerdown', onFirstInteract);
+      window.removeEventListener('touchstart', onFirstInteract);
+      window.removeEventListener('keydown', onFirstInteract);
+    }
+    window.addEventListener('pointerdown', onFirstInteract);
+    window.addEventListener('touchstart', onFirstInteract);
+    window.addEventListener('keydown', onFirstInteract);
+  })();
+</script>
+
+<script type="module" async="" src="assets/index-NkhRmeND.js"></script></body></html>
