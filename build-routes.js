@@ -57,8 +57,13 @@ replaceExact('Venue section name', '{className:`font-display text-3xl gold-text 
 replaceExact('Venue section address', '{className:`mt-3 text-sm tracking-[0.25em] text-gold-soft/80 uppercase`,children:`Amber Road · Jaipur · 302002`}', '{className:`mt-3 text-sm tracking-[0.25em] text-gold-soft/80 uppercase`,children:_wv.address||`Neral - Badlapur Rd · Chamtoli · Maharashtra 421503`}');
 replaceExact('Venue section description', '{className:`mt-8 font-display text-lg italic leading-relaxed text-foreground/80`,children:`A 19th-century palace set among eight acres of gardens — candlelit courtyards, mirrored halls, and the soft sound of fountains beneath a Jaipur sky.`}', '{className:`mt-8 font-display text-lg italic leading-relaxed text-foreground/80`,children:_wv.description||`A scenic celebration venue surrounded by the serene hills of Sahyadri, welcoming all our loved ones.`}');
 
-// 11. Countdown date
+// 11. Countdown date and header
 replaceExact('Countdown date', 'var y_=`2027-02-14T18:30:00+05:30`', 'var y_=_we.dateISO||`2026-12-09T19:00:00+05:30`');
+replaceExact(
+  'Remove hardcoded countdown title and greeting',
+  '(0,a.jsx)(pu,{eyebrow:`The Countdown`,title:`179 days, still counting.`,className:`mx-auto max-w-2xl`}),(0,a.jsxs)(`div`,{className:`mt-10`,children:[(0,a.jsx)(Qg,{}),',
+  '(0,a.jsx)(`h2`,{className:`text-center font-display text-3xl gold-text sm:text-4xl`,children:`The Countdown`}),(0,a.jsxs)(`div`,{className:`mt-8`,children:['
+);
 
 // 12. Footer couple names & date
 replaceExact('Footer couple names', 'children:[`Aarav `,(0,a.jsx)(`span`,{className:`font-light italic text-gold-soft/55`,children:`&`}),` Meera`]', 'children:[(_wc.groom||`Amrit`)+` `,(0,a.jsx)(`span`,{className:`font-light italic text-gold-soft/55`,children:`&`}),` `+(_wc.bride||`Ankita`)]');
